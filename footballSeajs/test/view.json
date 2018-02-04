@@ -1,0 +1,19 @@
+{
+ "error": 0,
+ "message": "ok",
+ "data": 
+   
+   [
+     {"imgSrc1":"../assets/img/search1.jpg","title":"我叫小蒙","text":"我是小蒙我怕谁！哈哈哈","praise":"382344",
+       "imgSrc2":"../assets/img/view-1.jpg","caption":"小丸子啊小丸子!"
+      },
+      {"imgSrc1":"../assets/img/search1.jpg","title":"我叫小蒙","text":"我是小蒙我怕谁！哈哈哈","praise":"382344",
+       "imgSrc2":"../assets/img/view-1.jpg","caption":"小丸子啊小丸子!"
+      },
+      {"imgSrc1":"../assets/img/search1.jpg","title":"我叫小蒙","text":"我是小蒙我怕谁！哈哈哈","praise":"382344",
+       "imgSrc2":"../assets/img/view-1.jpg","caption":"小丸子啊小丸子!"
+      }
+   ]
+ 
+  
+}

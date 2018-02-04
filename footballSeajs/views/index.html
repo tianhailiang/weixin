@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">  		
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="../assets/css/reset.css"  />
+		<script src="../assets/js/modules/common/rem.js" ></script>
+		<link rel="stylesheet" type="text/css" href="../assets/css/swiper-3.3.1.min.css" />
+
+		<link rel="stylesheet" type="text/css" href="../assets/css/index_0.css"  />
+
+
+	</head>
+	<body>
+		
+		<header>
+			<ul id="top">
+				<li class="opa"><a href="#" >热点</a></li>
+				<li><a href="#" >关注</a></li>
+			</ul>
+		</header>
+	
+		<nav class="ngt" style="display:block;">
+				<ul id="nav">
+					<li ><a href="#" class="act">足球现场<i class="show"></i></a></li>
+					<li><a href="#">足球生活<i></i></a></li>
+					<li><a href="#">足球美女<i></i></a></li>
+				</ul>
+			</nav>
+		
+		<section class="hot" style="display:block;">
+			<div class="swiper-container" id="swCont">
+				  <div class="swiper-wrapper">
+				    <div class="swiper-slide" >
+				    	
+				    	<div class="wrapper0"  >
+				    	      <div id="slider0" >		    	  	
+
+  		    	              </div>
+							    
+						</div>
+				    </div>
+				    <div class="swiper-slide" >
+				    	<div class="wrapper1">
+					    	 <div id="slider1" >
+					    	  	
+
+					    	  </div>
+							    
+						</div>
+
+				    </div>
+				    <div class="swiper-slide" >
+				    	<div class="wrapper2"  >
+
+				    	  <div id="slider2" >
+							    
+						 </div>
+
+				    </div>
+				  </div>
+		   </div>
+			
+			
+		</section>
+	
+		
+		<!--=====关注==-->
+		
+			
+			<section class="view" style="display:none;" id="view">
+				
+				<div id="wrapper"  >
+
+				    	  <div id="view1"  >
+							    
+						 </div>
+				
+				
+			</section>
+			
+			
+		
+		
+		
+		<footer>
+		  <nav>
+		     <ul>
+		     	<li><a href="index.html" class="active"><i class="iconfont">&#xe60f;</i><span class="font">首页</span></a></li>
+		     	<li><a href="search.html" ><i class="iconfont">&#xe644;</i><span class="font">发现</span></a></li>
+		     	<li><a href="javascript:void(0);" id="phone"><i class="iconfont">&#xe670;</i><span class="font">相机</span></a></li>
+		     	<li><a href="person.html" ><i class="iconfont">&#xe697;</i><span class="font">我的</span></a></li>
+		     	<li><a href="#" ><i class="iconfont">&#xe62a;</i><span class="font">退出</span></a></li>
+		     </ul>
+		  
+		  </nav>
+		
+		
+		</footer>
+		 
+		 <script src="../assets/js/sea.js" ></script>
+		 <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" ></script> -->
+		<!-- <script src="assets/js/zepto.min.js" ></script>
+		<script src="assets/js/swiper-3.3.1.jquery.min.js" ></script>
+	    <script src="assets/js/zepto.tap.js" ></script>
+		<script src="assets/js/artTamplate.js"></script>
+		<script src="assets/js/iscroll.js"> </script> -->
+		<script type="text/html" id="listLive_tmpl" >
+		
+		  {{each data as value index }}
+		     
+		     
+		     <ul class="chunk1">
+					<li>
+						
+						<img src="{{value.imgSrc1}}" />
+						<p>{{value.describe1}}</p>
+					</li>
+					<li class="last">
+						
+						<img src="{{value.imgSrc2}}" />
+						<p>{{value.describe2}}</p>
+					</li>
+					
+			</ul>
+		  
+		
+		
+		 {{/each}}
+		
+		</script>
+        
+       <script type="text/html" id="view_tmpl" >
+		
+		  {{each data as value index }}
+		     
+		     
+		     <div class="rack">
+					<ul class="ul-top">
+						<li>
+							<img src="{{value.imgSrc1}}" class="pic" />
+						</li>
+						<li>
+							<h2>{{value.title}}</h2>
+							<p>{{value.text}}</p>
+						</li>
+						
+						<li>
+							<span>{{value.praise}}</span>
+						</li>
+				   </ul>
+				   
+				   <figure>
+				   	 <img src="{{value.imgSrc2}}"  />
+				   	 <figcaption>{{value.caption}}</figcaption>
+				   </figure>
+				   
+				</div>
+		  
+		
+		
+		 {{/each}}
+		
+		</script>
+
+       
+
+		<script>
+			
+            
+	    	seajs.config({
+		  base: "../assets/js/modules/", //告诉seajs 我需要的模块到这个目录下面去找
+		  alias: { //在没有定义模块ID 的时候，我们是按照文件的路径来加载的，当有些路径比较长，写起来累，通过廷议别名来让引用清爽一点嘛！
+		    "zepto": "dep/zepto.js",
+		    "tap":"common/zepto.tap.js",
+		    "swiper":"common/swiper-3.3.1.min.js",
+		   
+		   "artTanp":"common/artTamplate.js",
+           "iscroll":"common/iscroll.js",
+           "weixin":"dep/weixin.js"
+
+		  }
+
+		})
+
+		seajs.use('common/index',function(main){ //  在页面当中引用你的模块
+	      
+
+	})
+
+
+			
+		</script>
+		
+		
+	</body>
+</html>

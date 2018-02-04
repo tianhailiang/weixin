@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no" />
+<meta name="apple-touch-fullscreen" content="YES" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<style>
+	button{
+		padding:10px;
+		color: red;
+	};
+</style>
+</head>
+<body>
+	<button id="getSign">签名获取加勒比</button>
+	<button id="scanQRCode1">扫描</button>
+	<button id="photo">拍照</button>
+</body>
+<script type="text/javascript" src="./zepto.js"></script>
+<script type="text/javascript"
+	src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+        $('#getSign').on('click', function(event) {
+        	event.preventDefault();
+        	$.post("/getSignature", {}, function(config) {
+			if (config != undefined && config != null) {
+
+				wx.config({
+					debug : true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+					appId : 'wx3cc6ed0caf890dab', // 必填，appID公众号的唯一标识
+					timestamp : config.timestamp, // 必填，生成签名的时间戳
+					nonceStr : config.nonceStr, // 必填，生成签名的随机串
+					signature : config.signature,// 必填，签名，见附录1
+					jsApiList : [ 'scanQRCode','onMenuShareTimeline','chooseImage']
+				// 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+				});
+				alert('配置成功！');
+			}
+		  });
+        });
+
+		
+
+		wx.ready(function() {
+			// 9.1.2 扫描二维码并返回结果
+			document.querySelector('#scanQRCode1').onclick = function() {
+				wx.scanQRCode({
+					needResult : 1,
+					desc : '微信调扫描',
+					success : function(res) {
+						//扫描成功的返回值
+						alert(JSON.stringify(res));
+					}
+				});
+			};
+
+				wx.onMenuShareTimeline({
+					    title: '海盗', // 分享标题
+					    link: 'www.baidu.com', // 分享链接
+					    imgUrl: 'https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1462881185&di=475c7fc9a669c537d2caf6a1032e1f79&src=http://img5.duitang.com/uploads/item/201202/25/20120225171212_d4GAF.thumb.700_0.jpg', // 分享图标
+					    success: function () { 
+					        // 用户确认分享后执行的回调函数
+					        alert("分享成功")
+					    },
+					    cancel: function () { 
+					        // 用户取消分享后执行的回调函数
+					        alert("不分享，你怎么得到钱")
+					    }
+					});
+        
+
+                document.querySelector("#photo").onclick=function(){
+                	wx.chooseImage({
+				    count: 1, // 默认9
+				    sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+				    sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+				    success: function (res) {
+				        var localIds = res.localIds; // 返回选定照片的本地ID列表，localId可以作为img标签的src属性显示图片
+				        console.log(localIds)
+				    }
+				});
+				
+			  }	 
+
+        //ready
+		});
+         
+
+	});
+</script>
+</html>
+

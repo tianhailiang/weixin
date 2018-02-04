@@ -1,0 +1,220 @@
+html,body{
+				width:100%;
+				height:100%;
+			}
+			
+			@font-face {
+			  font-family: 'iconfont';
+			  src: url('../icont/iconfont.woff') format('woff'), /* chrome、firefox */
+			  url('../icont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+			  url('../icont/iconfont.svg') format('svg');/* iOS 4.1- */
+		 }
+			
+			
+			body{
+				display:flex;
+				display:-webkit-flex;
+				flex-direction: column;
+				display:-webkit-box;
+				-webkit-box-orient:vertical;
+			}
+			
+			header{
+				max-width:100%;
+				height:0.88rem;
+				background:#0dc441;
+				text-align:center;
+				line-height:0.88rem;
+			}
+			
+			header .heade-title{
+				font-size:0.34rem;
+				color:#fff;
+			}
+			
+			
+			
+			
+			
+			/*section*/
+			
+			section{
+				flex:1;
+				height:100%;
+				overflow-y:scroll;
+				font-size:0;
+				background:#fff;
+				-webkit-box-flex:1;
+			}
+		
+			
+			
+			
+			
+			section .ul-top{
+				display:flex;
+				display:-webkit-flex;
+				height:1.45rem;
+				box-sizing: border-box;
+				display:-webkit-box;
+				padding-top:0.18rem;
+				font-size:0;
+			}
+			
+			
+			section .ul-top li:nth-of-type(1){
+			
+				width:1.37rem;
+				position:relative;
+			}
+			
+			section .ul-top li:nth-of-type(2){
+				
+				
+				flex:1;
+				font-size:0;
+				-webkit-box-flex:1;
+		   }
+			section .ul-top .pic{
+				width:0.95rem;
+				height:0.95rem;
+				position:absolute;
+				left:0.23rem;
+				
+			}
+			section  .ul-top .sph{
+				display:block;
+				font-weight: bold;
+				font-size:0.28rem;
+				margin-top:0.09rem;
+				margin-bottom:0.25rem;
+				line-height:0.28rem;
+			}
+			
+			section .ul-top p{
+				font-size:0.24rem;
+				line-height:0.24rem;
+			}
+			
+			
+		   section .ul-nav{
+		   	  display:flex;
+		   	  display:-webkit-flex;
+		   	  display:-webkit-box;
+		   	
+		   	  height:0.4rem;
+		   	  box-sizing: border-box;
+		   	  border-bottom:1px solid #e5e5e5;
+		   	  font-size:0;
+		   	  
+		   }
+			
+			section .ul-nav li{
+				flex:1;
+				margin-right:0.2rem;
+				font-size:0.24rem;
+				text-align:center;
+				position:relative;
+				line-height:0.24rem;
+				-webkit-box-flex:1;
+			}
+			section .ul-nav li:nth-of-type(3){
+				margin-right:0;
+			}
+			
+			section .ul-nav li .show{
+				display:block;
+				width:100%;
+				position:absolute;
+				bottom:0;
+				border-bottom:0.05rem solid #0dc441;
+			}
+			
+			
+			.new-pic{
+				position:absolute;
+				top:0.4rem;
+				max-width:6.4rem;
+				
+			}
+			
+			.new-pic .rack{
+				width:100%;
+				display:flex;
+				display:-webkit-flex;
+				display:-webkit-box;
+			}
+			
+			.new-pic .rack li{
+				flex:1;
+				margin-right:0.1rem;
+				width:3.15rem;
+				height:3.15rem;
+				-webkit-box-flex:1;
+			}
+			
+			.new-pic .rack li:nth-of-type(2){
+				margin-right:0;
+			}
+			
+			/*footer*/
+			.bottom{
+				height:0.98rem;
+				width:100%;
+				background:#f1f1f1;
+				overflow:hidden;
+			}
+			footer {
+				  height: 0.88rem;
+				  max-width: 100%;
+				  background: yellow;
+				  border-top:1px solid #cdcdcd;
+				  margin-top:0.1rem;
+				}
+				footer ul {
+				  width: 100%;
+				  height: 0.88rem;
+				  display: flex;
+				  display: -webkit-flex;
+				  display:-webkit-box;
+				}
+				footer ul li {
+				  flex: 1;
+				  height: 0.88rem;
+				  -webkit-box-flex:1;
+				}
+				footer ul li a {
+				  display: block;
+				  font-size: 0;
+				  width: 100%;
+				  height: 100%;
+				  display: flex;
+				  display: -webkit-flex;
+				  flex-direction: column;
+				  align-items: center;
+				  justify-content: center;
+				  display:-webkit-box;
+				  -webkit-box-orient:vertical;
+				  -webkit-box-pack:center;
+				  -webkit-box-align:center;
+				}
+				footer ul li a .iconfont {
+				  display: block;
+				  font-family: "iconfont" !important;
+				  font-size: 0.32rem;
+				  font-style: normal;
+				  -webkit-font-smoothing: antialiased;
+				  -webkit-text-stroke-width: 0.2px;
+				  -moz-osx-font-smoothing: grayscale;
+				  line-height:0.32rem;
+				}
+				footer ul li a .font {
+				  margin-top: 0.09rem;
+				  display: block;
+				  font-size: 0.24rem;
+				  line-height:0.24rem;
+				}
+				footer ul li .active {
+				  color: #0dc441;
+				}
+			

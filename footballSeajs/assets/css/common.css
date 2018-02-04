@@ -1,0 +1,79 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('../icont/iconfont.woff') format('woff'), /* chrome、firefox */
+  url('../icont/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('../icont/iconfont.svg') format('svg');/* iOS 4.1- */
+}
+header {
+  max-width: 100%;
+  height: 0.88rem;
+  background: #0dc441;
+  display: flex;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/*===section====*/
+section {
+  flex: 1;
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 0;
+}
+
+
+footer {
+  height: 0.88rem;
+  max-width: 100%;
+  background: yellow;
+}
+footer ul {
+  width: 100%;
+  height: 0.88rem;
+  display: flex;
+  display: -webkit-flex;
+}
+footer ul li {
+  flex: 1;
+  height: 0.88rem;
+}
+footer ul li a {
+  display: block;
+  font-size: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer ul li a .iconfont {
+  display: block;
+  font-family: "iconfont" !important;
+  font-size: 0.32rem;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+footer ul li a .font {
+  margin-top: 0.05rem;
+  display: block;
+  font-size: 0.24rem;
+}
+footer ul li .active {
+  color: #0dc441;
+}
